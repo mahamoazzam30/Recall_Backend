@@ -1,10 +1,18 @@
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+# Resolved relative to this file (not the process's working directory) so
+# settings load correctly regardless of where the app is launched from —
+# e.g. `npm run dev` invokes uvicorn with cwd=frontend/, where a plain
+# ".env" would never be found and everything would silently fall back to
+# the hardcoded defaults below.
+_ENV_FILE = Path(__file__).resolve().parent.parent / ".env"
+
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+    model_config = SettingsConfigDict(env_file=_ENV_FILE, env_file_encoding="utf-8", extra="ignore")
 
     # Database
     database_url: str = "postgresql+psycopg://recall:recall@localhost:5432/recall"
