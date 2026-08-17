@@ -5,11 +5,12 @@ accuracy drops below a threshold. Surfaces a "review session available" flag
 for the frontend to poll/display, rather than the student manually requesting one.
 """
 import uuid
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
+from app.db.models.exam_plan import ExamPlan, ExamPlanDay, ExamPlanStatus
 from app.db.models.mastery import Mastery
 from app.db.models.schedule_item import ScheduleItem, ScheduleStatus
 
@@ -51,3 +52,24 @@ def upsert_schedule_item(db: Session, user_id: uuid.UUID, concept_id: uuid.UUID,
     db.commit()
     db.refresh(item)
     return item
+
+
+def todays_exam_targets(db: Session, user_id: uuid.UUID, course_id: uuid.UUID) -> list[uuid.UUID] | None:
+    """If the course has an active exam plan with a target list for today, return those
+    concept ids so the quiz session can surface them first — else None (normal selection).
+    """
+    plan_stmt = select(ExamPlan).where(
+        ExamPlan.user_id == user_id,
+        ExamPlan.course_id == course_id,
+        ExamPlan.status == ExamPlanStatus.active,
+    )
+    plan = db.execute(plan_stmt).scalar_one_or_none()
+    if plan is None:
+        return None
+
+    today = date.today()
+    day_stmt = select(ExamPlanDay).where(ExamPlanDay.exam_plan_id == plan.id, ExamPlanDay.date == today)
+    day = db.execute(day_stmt).scalar_one_or_none()
+    if day is None or not day.target_concept_ids:
+        return None
+    return [uuid.UUID(cid) for cid in day.target_concept_ids]

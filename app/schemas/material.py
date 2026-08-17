@@ -7,7 +7,8 @@ from app.db.models.material import MaterialStatus, SourceType
 
 class MaterialResponse(BaseModel):
     id: uuid.UUID
-    subject_id: uuid.UUID
+    course_id: uuid.UUID
+    module_id: uuid.UUID | None = None
     filename: str
     source_type: SourceType
     status: MaterialStatus

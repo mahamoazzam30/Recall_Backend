@@ -11,4 +11,4 @@ class User(UUIDPKMixin, TimestampMixin, Base):
     email: Mapped[str] = mapped_column(String(255), unique=True, index=True, nullable=False)
     hashed_password: Mapped[str] = mapped_column(String(255), nullable=False)
 
-    subjects: Mapped[list["Subject"]] = relationship(back_populates="user", cascade="all, delete-orphan")
+    courses: Mapped[list["Course"]] = relationship(back_populates="user", cascade="all, delete-orphan")

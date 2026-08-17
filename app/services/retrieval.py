@@ -13,14 +13,14 @@ from app.db.models.material import Material
 from app.llm.embeddings import embed_text
 
 
-async def search(db: Session, query: str, subject_id: uuid.UUID, top_k: int = 5) -> list[Chunk]:
-    """Embed `query` and return the top-k nearest chunks (cosine distance) within a subject."""
+async def search(db: Session, query: str, course_id: uuid.UUID, top_k: int = 5) -> list[Chunk]:
+    """Embed `query` and return the top-k nearest chunks (cosine distance) within a course."""
     query_vector = await embed_text(query)
 
     stmt = (
         select(Chunk)
         .join(Material, Chunk.material_id == Material.id)
-        .where(Material.subject_id == subject_id)
+        .where(Material.course_id == course_id)
         .order_by(Chunk.embedding.cosine_distance(query_vector))
         .limit(top_k)
     )

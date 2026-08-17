@@ -23,14 +23,3 @@ class UserResponse(BaseModel):
     email: EmailStr
 
     model_config = {"from_attributes": True}
-
-
-class SubjectCreate(BaseModel):
-    name: str
-
-
-class SubjectResponse(BaseModel):
-    id: uuid.UUID
-    name: str
-
-    model_config = {"from_attributes": True}
