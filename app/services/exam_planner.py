@@ -31,7 +31,7 @@ def generate_plan_days(
 
     plan_days: list[tuple[date, list[uuid.UUID]]] = []
     for offset in range(days_left):
-        day = today + timedelta(days=offset + 1)
+        day = today + timedelta(days=offset)
         days_to_exam = (exam_date - day).days
 
         if days_to_exam < CRAM_WINDOW_DAYS:
