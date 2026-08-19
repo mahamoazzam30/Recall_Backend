@@ -20,9 +20,9 @@ _QUESTIONS_PER_SESSION = 5
 _SEED_QUERY = "key concepts, definitions, and important facts"
 
 
-async def build_quiz_session(
+async def select_questions_for_session(
     db: Session, user: User, course_id: uuid.UUID, concept_ids: list[uuid.UUID] | None = None
-) -> QuizSessionResponse:
+) -> list[Question]:
     course = db.get(Course, course_id)
     if course is None or course.user_id != user.id:
         raise HTTPException(status_code=404, detail="Course not found")
@@ -68,6 +68,13 @@ async def build_quiz_session(
     if not questions:
         raise HTTPException(status_code=422, detail="No material has been ingested for this course yet")
 
+    return questions
+
+
+async def build_quiz_session(
+    db: Session, user: User, course_id: uuid.UUID, concept_ids: list[uuid.UUID] | None = None
+) -> QuizSessionResponse:
+    questions = await select_questions_for_session(db, user, course_id, concept_ids)
     return QuizSessionResponse(questions=questions)
 
 
