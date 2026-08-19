@@ -9,6 +9,7 @@ from app.api.deps import get_current_user
 from app.db.models.attempt import Attempt
 from app.db.models.concept import Concept
 from app.db.models.course import Course
+from app.db.models.course_member import CourseMember
 from app.db.models.mastery import Mastery
 from app.db.models.material import Material
 from app.db.models.module import Module
@@ -23,20 +24,22 @@ from app.schemas.course import (
     CourseDueTodayOut,
     CourseListItem,
     CourseMasteryOut,
+    CourseMemberOut,
     CourseResponse,
     CourseTopicsResponse,
     ModuleCreate,
     ModuleResponse,
     TopicOut,
 )
+from app.services import access
 from app.services.topics import list_topics
 
 router = APIRouter()
 
 
 def _get_owned_course(db: Session, course_id: uuid.UUID, user_id: uuid.UUID) -> Course:
-    course = db.get(Course, course_id)
-    if course is None or course.user_id != user_id:
+    course = access.get_accessible_course(db, course_id, user_id)
+    if course is None:
         raise HTTPException(status_code=404, detail="Course not found")
     return course
 
@@ -81,7 +84,17 @@ def create_course(
 def list_courses(
     db: Session = Depends(get_db), current_user: User = Depends(get_current_user)
 ) -> list[CourseListItem]:
-    courses = db.query(Course).filter(Course.user_id == current_user.id).order_by(Course.created_at.desc()).all()
+    owned = list(db.execute(select(Course).where(Course.user_id == current_user.id)).scalars().all())
+    joined_ids = list(
+        db.execute(
+            select(CourseMember.course_id).where(CourseMember.user_id == current_user.id)
+        ).scalars().all()
+    )
+    joined = list(db.execute(select(Course).where(Course.id.in_(joined_ids))).scalars().all()) if joined_ids else []
+
+    courses = sorted(owned + joined, key=lambda c: c.created_at, reverse=True)
+    owned_ids = {c.id for c in owned}
+
     items = []
     for course in courses:
         mastery_pct, due_count = _course_progress(db, course.id, current_user.id)
@@ -93,6 +106,7 @@ def list_courses(
                 created_at=course.created_at,
                 mastery_pct=mastery_pct,
                 due_count=due_count,
+                is_owner=course.id in owned_ids,
             )
         )
     return items
@@ -122,7 +136,53 @@ def get_course(
         materials=materials,
         mastery_pct=mastery_pct,
         due_count=due_count,
+        is_owner=course.user_id == current_user.id,
     )
+
+
+@router.post("/{course_id}/join", response_model=CourseListItem, status_code=201)
+def join_course(
+    course_id: uuid.UUID, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)
+) -> CourseListItem:
+    course = db.get(Course, course_id)
+    if course is None:
+        raise HTTPException(status_code=404, detail="Course not found")
+
+    if course.user_id == current_user.id:
+        raise HTTPException(status_code=400, detail="You already own this course")
+
+    already_member = db.execute(
+        select(CourseMember).where(CourseMember.course_id == course_id, CourseMember.user_id == current_user.id)
+    ).scalar_one_or_none()
+    if already_member is None:
+        db.add(CourseMember(course_id=course_id, user_id=current_user.id))
+        db.commit()
+
+    mastery_pct, due_count = _course_progress(db, course.id, current_user.id)
+    return CourseListItem(
+        id=course.id,
+        name=course.name,
+        color_tag=course.color_tag,
+        created_at=course.created_at,
+        mastery_pct=mastery_pct,
+        due_count=due_count,
+        is_owner=False,
+    )
+
+
+@router.get("/{course_id}/members", response_model=list[CourseMemberOut])
+def list_course_members(
+    course_id: uuid.UUID, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)
+) -> list[CourseMemberOut]:
+    course = _get_owned_course(db, course_id, current_user.id)
+
+    rows = db.execute(
+        select(CourseMember, User).join(User, CourseMember.user_id == User.id).where(CourseMember.course_id == course_id)
+    ).all()
+
+    members = [CourseMemberOut(email=course.user.email, is_owner=True, joined_at=course.created_at)]
+    members += [CourseMemberOut(email=u.email, is_owner=False, joined_at=cm.created_at) for cm, u in rows]
+    return members
 
 
 @router.post("/{course_id}/modules", response_model=ModuleResponse, status_code=201)

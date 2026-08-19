@@ -4,10 +4,10 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.api.deps import get_current_user
-from app.db.models.course import Course
 from app.db.models.user import User
 from app.db.session import get_db
 from app.schemas.chat import ChatRequest, ChatResponse, ChatSourceOut
+from app.services import access
 from app.services.chat import answer_question
 
 router = APIRouter()
@@ -20,8 +20,8 @@ async def chat_with_course(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ) -> ChatResponse:
-    course = db.get(Course, course_id)
-    if course is None or course.user_id != current_user.id:
+    course = access.get_accessible_course(db, course_id, current_user.id)
+    if course is None:
         raise HTTPException(status_code=404, detail="Course not found")
 
     answer, chunks = await answer_question(db, course_id, course.name, payload.question)

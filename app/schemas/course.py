@@ -23,6 +23,7 @@ class CourseResponse(BaseModel):
 class CourseListItem(CourseResponse):
     mastery_pct: float
     due_count: int
+    is_owner: bool = True
 
 
 class ModuleCreate(BaseModel):
@@ -45,6 +46,13 @@ class CourseDetailResponse(BaseModel):
     materials: list[MaterialResponse]
     mastery_pct: float
     due_count: int
+    is_owner: bool = True
+
+
+class CourseMemberOut(BaseModel):
+    email: str
+    is_owner: bool
+    joined_at: datetime
 
 
 class CourseMasteryOut(BaseModel):

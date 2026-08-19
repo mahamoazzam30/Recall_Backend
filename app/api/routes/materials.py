@@ -5,11 +5,11 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.api.deps import get_current_user
-from app.db.models.course import Course
 from app.db.models.material import Material, MaterialStatus, SourceType
 from app.db.models.user import User
 from app.db.session import SessionLocal, get_db
 from app.schemas.material import MaterialResponse, MaterialStatusResponse
+from app.services import access
 from app.services.ingest import ingest_material
 
 router = APIRouter()
@@ -34,8 +34,7 @@ async def upload_material(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ) -> Material:
-    course = db.get(Course, course_id)
-    if course is None or course.user_id != current_user.id:
+    if access.get_accessible_course(db, course_id, current_user.id) is None:
         raise HTTPException(status_code=404, detail="Course not found")
 
     ext = (file.filename or "").rsplit(".", 1)[-1].lower()
@@ -64,8 +63,7 @@ async def upload_material(
 def list_materials(
     course_id: uuid.UUID, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)
 ) -> list[Material]:
-    course = db.get(Course, course_id)
-    if course is None or course.user_id != current_user.id:
+    if access.get_accessible_course(db, course_id, current_user.id) is None:
         raise HTTPException(status_code=404, detail="Course not found")
 
     stmt = select(Material).where(Material.course_id == course_id).order_by(Material.created_at.desc())
@@ -77,6 +75,6 @@ def get_material_status(
     material_id: uuid.UUID, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)
 ) -> Material:
     material = db.get(Material, material_id)
-    if material is None or material.course.user_id != current_user.id:
+    if material is None or not access.can_access_course(db, material.course, current_user.id):
         raise HTTPException(status_code=404, detail="Material not found")
     return material

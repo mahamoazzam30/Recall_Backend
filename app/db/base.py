@@ -8,6 +8,7 @@ from app.db.base_class import Base
 
 from app.db.models.user import User  # noqa: E402,F401
 from app.db.models.course import Course  # noqa: E402,F401
+from app.db.models.course_member import CourseMember  # noqa: E402,F401
 from app.db.models.module import Module  # noqa: E402,F401
 from app.db.models.material import Material  # noqa: E402,F401
 from app.db.models.chunk import Chunk  # noqa: E402,F401

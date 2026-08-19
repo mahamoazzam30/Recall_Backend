@@ -19,3 +19,4 @@ class Course(UUIDPKMixin, TimestampMixin, Base):
     modules: Mapped[list["Module"]] = relationship(back_populates="course", cascade="all, delete-orphan")
     materials: Mapped[list["Material"]] = relationship(back_populates="course", cascade="all, delete-orphan")
     concepts: Mapped[list["Concept"]] = relationship(back_populates="course", cascade="all, delete-orphan")
+    members: Mapped[list["CourseMember"]] = relationship(back_populates="course", cascade="all, delete-orphan")

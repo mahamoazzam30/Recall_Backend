@@ -1276,3 +1276,101 @@ Generate one question from this passage.
 {"type": "mcq", "prompt": "What is the total percentage allocated to Quizzes and Assignments in the course grading?", "choices": ["20%", "30%", "40%", "50%"], "answer_key": "30%", "concept_tag": "Grading Structure"  	
 }
 ```
+
+## [generation] 2026-08-19T13:36:10.968929+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=0542ea8d-4dc2-4ef8-bc4d-418b82c875e0):
+the thought process required in mathematics and hopefully, using that analytic mindset elsewhere. Course description This is a standard course of linear algebra aimed towards economics students. The students are expected to know college algebra and topics from Calculus. These topics will be ASSUMED and not explained in the class. Outline
+Week Topics Reference
+1 Introduction to Linear Algebra 1.1,1.2
+and Gaussian Elimination
+2 Matrices operations 1.3,1.4,1.5
+3 More on matrices 1.6,1.7,1.8
+4 Leontief Input-Output Models 1.10,2.1,2.2,2.3
+and determinants
+5 General vector spaces 4.1,4.2,4.3,4.4,4.5
+6 Fundamental spaces 4.6,4.7,4.8
+7 Geometry and properties of 4.8,4.9,4.10
+Matrices
+8 Eigenvalues and 5.1,5.2,5.3,5.5
+Eigenvectors
+9 Euclidean vector spaces 3.1,3.2,3.3,3.4
+10 Inner product 6.1,6.2,6.3,6.4,6.5
+
+11 Diagonalizations 7.1,7.2,7.3
+12 Some types of matrices and 7.4,7.5,9.4
+applications,SVD
+13 General Linear 8.1,8.2,8.3
+transformations
+14 Similarity 8.4,8.5
+Whatsapp Group:-
+https://chat.whatsapp.com/EzvePeIQQ35GxtdeAhjxUD?mode=ems_wa_c
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "What is Gaussian Elimination primarily used for in the context of linear algebra?", "choices": ["Solving systems of linear equations", "Calculating eigenvalues", "Finding matrix inverses", "Determining matrix rank"], "answer_key": "Solving systems of linear equations", "concept_tag": "Linear Algebra"
+}
+```
+
+## [generation] 2026-08-19T13:36:38.011090+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=610cc456-325e-41ef-be90-0d78664f394e):
+Course outline
+Linear Algebra MTS-203
+Semester:-Fall 2025
+Instrustor:-Muhammad Ashar Tafheem
+Email:- matafheem@iba.edu.pk
+Office hours:- Mon, Wed, Sat 11am-1pm (take appointment before coming)
+Office: F23, 1st floor NBP building,Main Campus IBA
+Textbook:-
+Elementary Linear Algebra 11th Edition by Anton and Rorres
+Reference:-
+- Linear algebra step by step by Kuldeep Singh (Detailed)
+- Linear algebra and its applications by Gilbert Strang(Classic)
+- Linear algebra for Economist(Aimed towards economics)
+- Linear algebra;What you need to know by Woerdeman(Concise)
+Grade Breakdown
+- Final Exams 50%
+- Mid term 20 %
+- Quizzes 20% (8 Quizzes biweekly n-2)
+- Notebook Maintenance/CP 10%
+- Assignment 10% (2 Assignment; 1 pre-midterm and 1 pre-finals)
+Grading outline
+The grading scheme is relative but the passing marks will not drop below 50 percent. Rules
+- IBA policies apply and even the instructor is bound by these policies. - There are a total of 28 sessions in this semester. - Assignments are to be submitted on time. No reason for non-submission or late
+submission will be accepted including LMS not working. - Assignments are to be submitted on LMS. The assignments should be handwritten and
+legible. - Attendance is mandatory and NOT up to the instructor. - Maximum number of absences is 4 as per IBA rules and policies. - Your valid queries can be emailed to the instructor if they are extremely important. Otherwise, the student should ask the instructor in person. - Pestering the instructor or the TA especially, for marks, exam pattern,course reduction ,
+is strictly not allowed. It could be penalized under academic misconduct. - Please be respectful and professional in your emails and in class. Course objective
+- TO understand basic concepts of Linear algebra e.g. system of linear equations. - TO be acquainted with methods of solutions of these linear systems. - TO appreciate how linear algebra crops up in real-world problems from diverse fields,
+especially economics. - TO acquire an appreciation for the thought process required in mathematics and
+hopefully, using that analytic mindset elsewhere. Course description
+This is a standard course of linear algebra aimed towards economics students. The students
+are expected to know college algebra and topics from Calculus. These topics will be ASSUMED
+and not explained in the class.
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "What percentage of the final grade is allocated to Final Exams in this course?", "choices": ["50%", "20%", "10%", "30%"], "answer_key": "50%", "concept_tag": "Grade Breakdown"}
+```

@@ -13,6 +13,7 @@ from app.db.session import get_db
 from app.schemas.quiz import QuizSessionResponse
 from app.schemas.weak_spot import WeakSpotOut
 from app.api.routes.quiz import build_quiz_session
+from app.services import access
 
 router = APIRouter()
 
@@ -20,8 +21,8 @@ WEAK_SPOT_THRESHOLD = 0.5
 
 
 def _get_owned_course(db: Session, course_id: uuid.UUID, user_id: uuid.UUID) -> Course:
-    course = db.get(Course, course_id)
-    if course is None or course.user_id != user_id:
+    course = access.get_accessible_course(db, course_id, user_id)
+    if course is None:
         raise HTTPException(status_code=404, detail="Course not found")
     return course
 

@@ -13,14 +13,15 @@ from app.db.models.mastery import Mastery
 from app.db.models.user import User
 from app.db.session import get_db
 from app.schemas.exam_plan import ExamPlanCreate, ExamPlanResponse, ExamPlanUpdate
+from app.services import access
 from app.services.exam_planner import generate_plan_days, readiness_pct
 
 router = APIRouter()
 
 
 def _get_owned_course(db: Session, course_id: uuid.UUID, user_id: uuid.UUID) -> Course:
-    course = db.get(Course, course_id)
-    if course is None or course.user_id != user_id:
+    course = access.get_accessible_course(db, course_id, user_id)
+    if course is None:
         raise HTTPException(status_code=404, detail="Course not found")
     return course
 

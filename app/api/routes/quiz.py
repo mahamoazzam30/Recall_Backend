@@ -6,12 +6,11 @@ from sqlalchemy.orm import Session
 
 from app.api.deps import get_current_user
 from app.db.models.concept import Concept
-from app.db.models.course import Course
 from app.db.models.question import Question
 from app.db.models.user import User
 from app.db.session import get_db
 from app.schemas.quiz import QuizSessionResponse
-from app.services import hooks, memory, retrieval
+from app.services import access, hooks, memory, retrieval
 from app.services.generation import generate_question
 
 router = APIRouter()
@@ -23,8 +22,8 @@ _SEED_QUERY = "key concepts, definitions, and important facts"
 async def select_questions_for_session(
     db: Session, user: User, course_id: uuid.UUID, concept_ids: list[uuid.UUID] | None = None
 ) -> list[Question]:
-    course = db.get(Course, course_id)
-    if course is None or course.user_id != user.id:
+    course = access.get_accessible_course(db, course_id, user.id)
+    if course is None:
         raise HTTPException(status_code=404, detail="Course not found")
 
     all_concepts = list(db.execute(select(Concept).where(Concept.course_id == course_id)).scalars().all())
