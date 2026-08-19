@@ -24,7 +24,7 @@ async def chat_with_course(
     if course is None or course.user_id != current_user.id:
         raise HTTPException(status_code=404, detail="Course not found")
 
-    answer, chunks = await answer_question(db, course_id, payload.question)
+    answer, chunks = await answer_question(db, course_id, course.name, payload.question)
     return ChatResponse(
         answer=answer,
         sources=[ChatSourceOut(content=c.content, page_ref=c.page_ref) for c in chunks],
