@@ -65,3 +65,14 @@ class CourseDashboardResponse(BaseModel):
     due_today: list[CourseDueTodayOut]
     current_streak_days: int
     longest_streak_days: int
+
+
+class TopicOut(BaseModel):
+    id: uuid.UUID
+    name: str
+
+    model_config = {"from_attributes": True}
+
+
+class CourseTopicsResponse(BaseModel):
+    topics: list[TopicOut]

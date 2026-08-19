@@ -24,9 +24,12 @@ from app.schemas.course import (
     CourseListItem,
     CourseMasteryOut,
     CourseResponse,
+    CourseTopicsResponse,
     ModuleCreate,
     ModuleResponse,
+    TopicOut,
 )
+from app.services.topics import list_topics
 
 router = APIRouter()
 
@@ -135,6 +138,20 @@ def create_module(
     db.commit()
     db.refresh(module)
     return module
+
+
+@router.get("/{course_id}/topics", response_model=CourseTopicsResponse)
+async def get_course_topics(
+    course_id: uuid.UUID, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)
+) -> CourseTopicsResponse:
+    _get_owned_course(db, course_id, current_user.id)
+    try:
+        concepts = await list_topics(db, course_id)
+    except Exception as exc:
+        raise HTTPException(
+            status_code=502, detail="Couldn't extract topics from this course's materials. Try again."
+        ) from exc
+    return CourseTopicsResponse(topics=[TopicOut.model_validate(c) for c in concepts])
 
 
 @router.get("/{course_id}/dashboard", response_model=CourseDashboardResponse)
