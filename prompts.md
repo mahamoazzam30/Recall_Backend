@@ -1374,3 +1374,268 @@ Generate one question from this passage.
 ```
 {"type": "mcq", "prompt": "What percentage of the final grade is allocated to Final Exams in this course?", "choices": ["50%", "20%", "10%", "30%"], "answer_key": "50%", "concept_tag": "Grade Breakdown"}
 ```
+
+## [topics] 2026-08-21T12:20:34.470989+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a curriculum analyst. Given excerpts from a student's course materials, extract the distinct topics they cover, ordered roughly as they appear in the material. Respond with ONLY a JSON object of the form {"topics": ["Topic name", ...]} — between 4 and 12 concise topic names (2-5 words each), with no duplicates or near-duplicates and no numbering. No explanation, no markdown fences — your entire response must start with { and end with }.
+
+Course outline
+Linear Algebra MTS-203
+Semester:-Fall 2025
+Instrustor:-Muhammad Ashar Tafheem
+Email:- matafheem@iba.edu.pk
+Office hours:- Mon, Wed, Sat 11am-1pm (take appointment before coming)
+Office: F23, 1st floor NBP building,Main Campus IBA
+Textbook:-
+Elementary Linear Algebra 11th Edition by Anton and Rorres
+Reference:-
+- Linear algebra step by step by Kuldeep Singh (Detailed)
+- Linear algebra and its applications by Gilbert Strang(Classic)
+- Linear algebra for Economist(Aimed towards economics)
+- Linear algebra;What you need to know by Woerdeman(Concise)
+Grade Breakdown
+- Final Exams 50%
+- Mid term 20 %
+- Quizzes 20% (8 Quizzes biweekly n-2)
+- Notebook Maintenance/CP 10%
+- Assignment 10% (2 Assignment; 1 pre-midterm and 1 pre-finals)
+Grading outline
+The grading scheme is relative but the passing marks will not drop below 50 percent. Rules
+- IBA policies apply and even the instructor is bound by these policies. - There are a total of 28 sessions in this semester. - Assignments are to be submitted on time. No reason for non-submission or late
+submission will be accepted including LMS not working. - Assignments are to be submitted on LMS. The assignments should be handwritten and
+legible. - Attendance is mandatory and NOT up to the instructor. - Maximum number of absences is 4 as per IBA rules and policies. - Your valid queries can be emailed to the instructor if they are extremely important. Otherwise, the student should ask the instructor in person. - Pestering the instructor or the TA especially, for marks, exam pattern,course reduction ,
+is strictly not allowed. It could be penalized under academic misconduct. - Please be respectful and professional in your emails and in class. Course objective
+- TO understand basic concepts of Linear algebra e.g. system of linear equations. - TO be acquainted with methods of solutions of these linear systems. - TO appreciate how linear algebra crops up in real-world problems from diverse fields,
+especially economics. - TO acquire an appreciation for the thought process required in mathematics and
+hopefully, using that analytic mindset elsewhere. Course description
+This is a standard course of linear algebra aimed towards economics students. The students
+are expected to know college algebra and topics from Calculus. These topics will be ASSUMED
+and not explained in the class.
+
+the thought process required in mathematics and hopefully, using that analytic mindset elsewhere. Course description This is a standard course of linear algebra aimed towards economics students. The students are expected to know college algebra and topics from Calculus. These topics will be ASSUMED and not explained in the class. Outline
+Week Topics Reference
+1 Introduction to Linear Algebra 1.1,1.2
+and Gaussian Elimination
+2 Matrices operations 1.3,1.4,1.5
+3 More on matrices 1.6,1.7,1.8
+4 Leontief Input-Output Models 1.10,2.1,2.2,2.3
+and determinants
+5 General vector spaces 4.1,4.2,4.3,4.4,4.5
+6 Fundamental spaces 4.6,4.7,4.8
+7 Geometry and properties of 4.8,4.9,4.10
+Matrices
+8 Eigenvalues and 5.1,5.2,5.3,5.5
+Eigenvectors
+9 Euclidean vector spaces 3.1,3.2,3.3,3.4
+10 Inner product 6.1,6.2,6.3,6.4,6.5
+
+11 Diagonalizations 7.1,7.2,7.3
+12 Some types of matrices and 7.4,7.5,9.4
+applications,SVD
+13 General Linear 8.1,8.2,8.3
+transformations
+14 Similarity 8.4,8.5
+Whatsapp Group:-
+https://chat.whatsapp.com/EzvePeIQQ35GxtdeAhjxUD?mode=ems_wa_c
+```
+
+**Response:**
+```
+{"topics": ["Introduction to Linear Algebra and Gaussian Elimination", "Matrix Operations", "Advanced Matrix Concepts", "Leontief Input-Output Models and Determinants", "Vector Spaces", "Fundamental Subspaces", "Matrix Geometry and Properties", "Eigenvalues and Eigenvectors", "Euclidean Spaces", "Inner Product Spaces", "Diagonalization", "Matrix Types and SVD"]}
+```
+
+## [generation] 2026-08-21T12:21:02.939530+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=ad1d02de-8b73-497e-aada-b049238ce02a):
+the thought process required in mathematics and hopefully, using that analytic mindset elsewhere. Course description This is a standard course of linear algebra aimed towards economics students. The students are expected to know college algebra and topics from Calculus. These topics will be ASSUMED and not explained in the class. Outline
+Week Topics Reference
+1 Introduction to Linear Algebra 1.1,1.2
+and Gaussian Elimination
+2 Matrices operations 1.3,1.4,1.5
+3 More on matrices 1.6,1.7,1.8
+4 Leontief Input-Output Models 1.10,2.1,2.2,2.3
+and determinants
+5 General vector spaces 4.1,4.2,4.3,4.4,4.5
+6 Fundamental spaces 4.6,4.7,4.8
+7 Geometry and properties of 4.8,4.9,4.10
+Matrices
+8 Eigenvalues and 5.1,5.2,5.3,5.5
+Eigenvectors
+9 Euclidean vector spaces 3.1,3.2,3.3,3.4
+10 Inner product 6.1,6.2,6.3,6.4,6.5
+
+11 Diagonalizations 7.1,7.2,7.3
+12 Some types of matrices and 7.4,7.5,9.4
+applications,SVD
+13 General Linear 8.1,8.2,8.3
+transformations
+14 Similarity 8.4,8.5
+Whatsapp Group:-
+https://chat.whatsapp.com/EzvePeIQQ35GxtdeAhjxUD?mode=ems_wa_c
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "Which week in the course covers Leontief Input-Output Models and determinants?", "choices": ["Week 1", "Week 2", "Week 4", "Week 5"], "answer_key": "Week 4", "concept_tag": "Course Outline Week 4 Topics"}
+```
+
+## [generation] 2026-08-21T12:21:16.946933+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=7e27d7b7-9615-47a2-a53f-0a11243ee888):
+Course outline
+Linear Algebra MTS-203
+Semester:-Fall 2025
+Instrustor:-Muhammad Ashar Tafheem
+Email:- matafheem@iba.edu.pk
+Office hours:- Mon, Wed, Sat 11am-1pm (take appointment before coming)
+Office: F23, 1st floor NBP building,Main Campus IBA
+Textbook:-
+Elementary Linear Algebra 11th Edition by Anton and Rorres
+Reference:-
+- Linear algebra step by step by Kuldeep Singh (Detailed)
+- Linear algebra and its applications by Gilbert Strang(Classic)
+- Linear algebra for Economist(Aimed towards economics)
+- Linear algebra;What you need to know by Woerdeman(Concise)
+Grade Breakdown
+- Final Exams 50%
+- Mid term 20 %
+- Quizzes 20% (8 Quizzes biweekly n-2)
+- Notebook Maintenance/CP 10%
+- Assignment 10% (2 Assignment; 1 pre-midterm and 1 pre-finals)
+Grading outline
+The grading scheme is relative but the passing marks will not drop below 50 percent. Rules
+- IBA policies apply and even the instructor is bound by these policies. - There are a total of 28 sessions in this semester. - Assignments are to be submitted on time. No reason for non-submission or late
+submission will be accepted including LMS not working. - Assignments are to be submitted on LMS. The assignments should be handwritten and
+legible. - Attendance is mandatory and NOT up to the instructor. - Maximum number of absences is 4 as per IBA rules and policies. - Your valid queries can be emailed to the instructor if they are extremely important. Otherwise, the student should ask the instructor in person. - Pestering the instructor or the TA especially, for marks, exam pattern,course reduction ,
+is strictly not allowed. It could be penalized under academic misconduct. - Please be respectful and professional in your emails and in class. Course objective
+- TO understand basic concepts of Linear algebra e.g. system of linear equations. - TO be acquainted with methods of solutions of these linear systems. - TO appreciate how linear algebra crops up in real-world problems from diverse fields,
+especially economics. - TO acquire an appreciation for the thought process required in mathematics and
+hopefully, using that analytic mindset elsewhere. Course description
+This is a standard course of linear algebra aimed towards economics students. The students
+are expected to know college algebra and topics from Calculus. These topics will be ASSUMED
+and not explained in the class.
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "What percentage of the grade is allocated to final exams in Linear Algebra MTS-203?", "choices": ["50%", "20%", "30%", "40%"], "answer_key": "50%", "concept_tag": "Grade Breakdown"}
+```
+
+## [generation] 2026-08-22T10:48:22.705200+00:00
+
+**Prompt:**
+```
+[liquid/lfm-2.5-2.6b:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=ad1d02de-8b73-497e-aada-b049238ce02a):
+the thought process required in mathematics and hopefully, using that analytic mindset elsewhere. Course description This is a standard course of linear algebra aimed towards economics students. The students are expected to know college algebra and topics from Calculus. These topics will be ASSUMED and not explained in the class. Outline
+Week Topics Reference
+1 Introduction to Linear Algebra 1.1,1.2
+and Gaussian Elimination
+2 Matrices operations 1.3,1.4,1.5
+3 More on matrices 1.6,1.7,1.8
+4 Leontief Input-Output Models 1.10,2.1,2.2,2.3
+and determinants
+5 General vector spaces 4.1,4.2,4.3,4.4,4.5
+6 Fundamental spaces 4.6,4.7,4.8
+7 Geometry and properties of 4.8,4.9,4.10
+Matrices
+8 Eigenvalues and 5.1,5.2,5.3,5.5
+Eigenvectors
+9 Euclidean vector spaces 3.1,3.2,3.3,3.4
+10 Inner product 6.1,6.2,6.3,6.4,6.5
+
+11 Diagonalizations 7.1,7.2,7.3
+12 Some types of matrices and 7.4,7.5,9.4
+applications,SVD
+13 General Linear 8.1,8.2,8.3
+transformations
+14 Similarity 8.4,8.5
+Whatsapp Group:-
+https://chat.whatsapp.com/EzvePeIQQ35GxtdeAhjxUD?mode=ems_wa_c
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "In which week of the course is Leontief Input-Output Models covered?", "choices": ["Week 1", "Week 4", "Week 7", "Week 10"], "answer_key": "Week 4", "concept_tag": "Linear Algebra Course Outline"}
+```
+
+## [generation] 2026-08-22T10:48:35.424795+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=7e27d7b7-9615-47a2-a53f-0a11243ee888):
+Course outline
+Linear Algebra MTS-203
+Semester:-Fall 2025
+Instrustor:-Muhammad Ashar Tafheem
+Email:- matafheem@iba.edu.pk
+Office hours:- Mon, Wed, Sat 11am-1pm (take appointment before coming)
+Office: F23, 1st floor NBP building,Main Campus IBA
+Textbook:-
+Elementary Linear Algebra 11th Edition by Anton and Rorres
+Reference:-
+- Linear algebra step by step by Kuldeep Singh (Detailed)
+- Linear algebra and its applications by Gilbert Strang(Classic)
+- Linear algebra for Economist(Aimed towards economics)
+- Linear algebra;What you need to know by Woerdeman(Concise)
+Grade Breakdown
+- Final Exams 50%
+- Mid term 20 %
+- Quizzes 20% (8 Quizzes biweekly n-2)
+- Notebook Maintenance/CP 10%
+- Assignment 10% (2 Assignment; 1 pre-midterm and 1 pre-finals)
+Grading outline
+The grading scheme is relative but the passing marks will not drop below 50 percent. Rules
+- IBA policies apply and even the instructor is bound by these policies. - There are a total of 28 sessions in this semester. - Assignments are to be submitted on time. No reason for non-submission or late
+submission will be accepted including LMS not working. - Assignments are to be submitted on LMS. The assignments should be handwritten and
+legible. - Attendance is mandatory and NOT up to the instructor. - Maximum number of absences is 4 as per IBA rules and policies. - Your valid queries can be emailed to the instructor if they are extremely important. Otherwise, the student should ask the instructor in person. - Pestering the instructor or the TA especially, for marks, exam pattern,course reduction ,
+is strictly not allowed. It could be penalized under academic misconduct. - Please be respectful and professional in your emails and in class. Course objective
+- TO understand basic concepts of Linear algebra e.g. system of linear equations. - TO be acquainted with methods of solutions of these linear systems. - TO appreciate how linear algebra crops up in real-world problems from diverse fields,
+especially economics. - TO acquire an appreciation for the thought process required in mathematics and
+hopefully, using that analytic mindset elsewhere. Course description
+This is a standard course of linear algebra aimed towards economics students. The students
+are expected to know college algebra and topics from Calculus. These topics will be ASSUMED
+and not explained in the class.
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "To which academic field is the Linear Algebra MTS-203 course primarily designed?", "choices": ["Economics", "Engineering", "Computer Science", "Biology"], "answer_key": "Economics", "concept_tag": "Course Objective - Economics Application"}
+```
