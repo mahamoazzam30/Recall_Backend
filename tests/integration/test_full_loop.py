@@ -1,5 +1,5 @@
 """End-to-end integration test covering the full loop: register -> login ->
-create subject -> upload material -> generate quiz session -> submit attempt
+create course -> upload material -> generate quiz session -> submit attempt
 -> grade -> mastery/schedule updated -> dashboard reflects it.
 
 Requires a real Postgres+pgvector database reachable via DATABASE_URL, and

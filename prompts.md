@@ -769,3 +769,873 @@ Generate one question from this passage.
 ```
 {"type": "mcq", "prompt": "What is recommended to maintain a healthy circadian rhythm according to the passage?", "choices": ["Consistent sleep schedules", "Reducing screen time", "Avoiding stimulants like caffeine", "Time management strategies"], "answer_key": "Consistent sleep schedules", "concept_tag": "Circadian rhythm" }
 ```
+
+## [generation] 2026-08-17T17:31:21.853112+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=41d79f3b-27fb-4557-9920-b1a5dcf8e0ff):
+consistent sleep schedules by going to bed and waking up at regular times to maintain a healthy circadian rhythm. Reducing screen time before bedtime and avoiding stimulants like caffeine at night can improve sleep quality. Educational institutions should raise awareness about the importance of sleep through workshops and counseling sessions. Time management
+strategies should be encouraged so students can complete academic tasks during the day instead of
+staying up late. Additionally, creating a quiet and comfortable sleep environment can further
+support better rest and overall well-being. CONCLUSION:
+Late-night alertness negatively affects students’ cognitive abilities, learning efficiency, and health. Proper sleep is essential for academic success and well-being. By adopting healthy sleep habits and
+reducing late-night activities, students can improve both their academic performance and overall
+quality of life. REFERENCE:
+Walker, M. (2017). Why we sleep: Unlocking the power of sleep and dreams. Scribner. Pilcher, J. J., & Huffcutt, A. I. (1996). Effects of sleep deprivation on performance: A meta-
+analysis. Sleep, 19(4), 318–326. Lim, J., & Dinges, D. F. (2010). A meta-analysis of the impact of short-term sleep deprivation on
+cognitive variables. Psychological Bulletin, 136(3), 375–389. Curcio, G., Ferrara, M., & De Gennaro, L. (2006). Sleep loss, learning capacity, and academic
+performance. Sleep Medicine Reviews, 10(5), 323–337. Hershner, S. D., & Chervin, R. D. (2014). Causes and consequences of sleepiness among college
+students. Nature and Science of Sleep, 6, 73–84. Taheri, S., Lin, L., Austin, D., Young, T., & Mignot, E. (2004). Short sleep duration is associated
+with reduced leptin and increased ghrelin levels. PLoS Medicine, 1(3), e62. Baglioni, C., Battagliese, G., Feige, B., Spiegelhalder, K., Nissen, C., Voderholzer, U., &
+Riemann, D. (2016). Insomnia as a predictor of depression. Journal of Affective Disorders,
+135(1–3), 10–19. Cain, N., & Gradisar, M. (2010). Electronic media use and sleep in school-aged children and
+adolescents. Sleep Medicine, 11(8), 735–742. Lemola, S., Perkinson-Gloor, N., Brand, S., Dewald-Kaufmann, J., & Grob, A. (2015). Adolescents’ electronic media use at night and sleep disturbance. Journal of Youth and
+Adolescence, 44(2), 405–418. Roenneberg, T., Allebrandt, K. V., Merrow, M., & Vetter, C. (2012). Social jetlag and obesity. Current Biology, 22(10), 939–943.
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "Which practice is recommended to maintain a healthy circadian rhythm according to the passage?", "choices": ["Irregular sleep times", "Consistent sleep schedules by going to bed and waking up at regular times", "Increased screen time before bed", "Consuming caffeine at night"], "answer_key": "Consistent sleep schedules by going to bed and waking up at regular times", "concept_tag": "Circadian Rhythm"}
+```
+
+## [chat] 2026-08-19T12:22:57.124319+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a study assistant answering a student's question about their course notes. Answer ONLY using the passages below. If the passages don't contain the answer, say you don't have that information in the uploaded materials — never make things up. Keep answers concise and direct.
+
+Passages:
+[Passage 1]
+performance, learning efficiency, and health outcomes. Addressing this issue is essential for improving students' academic success and overall well-being. PARADIGM: The study follows a cause-and-effect paradigm where late-night nocturnal alertness is considered the independent variable, while cognitive performance, academic learning efficiency, and physical and mental health outcomes are dependent variables. The framework suggests that increased
+nocturnal alertness leads to sleep deprivation, which negatively influences students' academic and
+health-related outcomes. PROCEDURE:
+The study was conducted by selecting a sample of students aged 18–25 from educational
+institutions. Data was collected through questionnaires focusing on sleep patterns, study habits,
+and academic performance. Students were asked about their late-night activities and health
+conditions. The collected data was then analyzed using simple statistical methods to identify the
+relationship between nocturnal alertness and its effects on cognitive performance, learning
+efficiency, and physical and mental health outcomes. SAMPLE / TARGET AUDIENCE / TOOLS:
+Sample: University and college students (age 18–25)
+Target Audience: Students, educators, and academic researchers
+TOOLS:
+• Questionnaire/Survey
+• Sleep pattern tracking
+• Academic performance records
+• Statistical analysis software (SPSS/Excel)
+THEROTICAL FRAMEWORK:
+This study is based on sleep deprivation and circadian rhythm theories, which explain how late-
+night nocturnal alertness affects students’ cognitive performance, learning efficiency, and health. According to these theories, staying awake at night disrupts the body’s natural sleep-wake cycle,
+leading to reduced concentration, weak memory, and poor academic performance. Continuous
+
+sleep disturbance also impacts physical health and increases stress, anxiety, and mental fatigue
+among students. HYPOTHESES:
+H0 (Null Hypothesis):
+Late-night nocturnal alertness has no significant effect on students’ cognitive performance,
+academic learning efficiency, or health outcomes. H1 (Alternative Hypothesis):
+Late-night nocturnal alertness has a significant negative effect on students’ cognitive
+performance, academic learning efficiency, and health outcomes. TERMINOLOGY:
+ Nocturnal Alertness – Being active or awake during late-night hours
+ Cognitive Performance – Mental abilities like memory, attention, and reasoning
+ Sleep Deprivation – Lack of sufficient sleep
+ Academic Efficiency – Ability to learn and perform academically
+ Circadian Rhythm – Body’s natural sleep-wake cycle
+RECOMMENDATIONS:
+Students should adopt consistent sleep schedules by going to bed and waking up at regular times to
+maintain a healthy circadian rhythm. Reducing screen time before bedtime and avoiding stimulants
+like caffeine at night can improve sleep quality. Educational institutions should raise awareness
+about the importance of sleep through workshops and counseling sessions.
+
+[Passage 2]
+performance, learning efficiency, and health outcomes. Addressing this issue is essential for improving students' academic success and overall well-being. PARADIGM: The study follows a cause-and-effect paradigm where late-night nocturnal alertness is considered the independent variable, while cognitive performance, academic learning efficiency, and physical and mental health outcomes are dependent variables. The framework suggests that increased
+nocturnal alertness leads to sleep deprivation, which negatively influences students' academic and
+health-related outcomes. PROCEDURE:
+The study was conducted by selecting a sample of students aged 18–25 from educational
+institutions. Data was collected through questionnaires focusing on sleep patterns, study habits,
+and academic performance. Students were asked about their late-night activities and health
+conditions. The collected data was then analyzed using simple statistical methods to identify the
+relationship between nocturnal alertness and its effects on cognitive performance, learning
+efficiency, and physical and mental health outcomes. SAMPLE / TARGET AUDIENCE / TOOLS:
+Sample: University and college students (age 18–25)
+Target Audience: Students, educators, and academic researchers
+TOOLS:
+• Questionnaire/Survey
+• Sleep pattern tracking
+• Academic performance records
+• Statistical analysis software (SPSS/Excel)
+THEROTICAL FRAMEWORK:
+This study is based on sleep deprivation and circadian rhythm theories, which explain how late-
+night nocturnal alertness affects students’ cognitive performance, learning efficiency, and health. According to these theories, staying awake at night disrupts the body’s natural sleep-wake cycle,
+leading to reduced concentration, weak memory, and poor academic performance. Continuous
+
+sleep disturbance also impacts physical health and increases stress, anxiety, and mental fatigue
+among students. HYPOTHESES:
+H0 (Null Hypothesis):
+Late-night nocturnal alertness has no significant effect on students’ cognitive performance,
+academic learning efficiency, or health outcomes. H1 (Alternative Hypothesis):
+Late-night nocturnal alertness has a significant negative effect on students’ cognitive
+performance, academic learning efficiency, and health outcomes. TERMINOLOGY:
+ Nocturnal Alertness – Being active or awake during late-night hours
+ Cognitive Performance – Mental abilities like memory, attention, and reasoning
+ Sleep Deprivation – Lack of sufficient sleep
+ Academic Efficiency – Ability to learn and perform academically
+ Circadian Rhythm – Body’s natural sleep-wake cycle
+RECOMMENDATIONS:
+Students should adopt consistent sleep schedules by going to bed and waking up at regular times to
+maintain a healthy circadian rhythm. Reducing screen time before bedtime and avoiding stimulants
+like caffeine at night can improve sleep quality. Educational institutions should raise awareness
+about the importance of sleep through workshops and counseling sessions.
+
+[Passage 3]
+performance, learning efficiency, and health outcomes. Addressing this issue is essential for improving students' academic success and overall well-being. PARADIGM: The study follows a cause-and-effect paradigm where late-night nocturnal alertness is considered the independent variable, while cognitive performance, academic learning efficiency, and physical and mental health outcomes are dependent variables. The framework suggests that increased
+nocturnal alertness leads to sleep deprivation, which negatively influences students' academic and
+health-related outcomes. PROCEDURE:
+The study was conducted by selecting a sample of students aged 18–25 from educational
+institutions. Data was collected through questionnaires focusing on sleep patterns, study habits,
+and academic performance. Students were asked about their late-night activities and health
+conditions. The collected data was then analyzed using simple statistical methods to identify the
+relationship between nocturnal alertness and its effects on cognitive performance, learning
+efficiency, and physical and mental health outcomes. SAMPLE / TARGET AUDIENCE / TOOLS:
+Sample: University and college students (age 18–25)
+Target Audience: Students, educators, and academic researchers
+TOOLS:
+• Questionnaire/Survey
+• Sleep pattern tracking
+• Academic performance records
+• Statistical analysis software (SPSS/Excel)
+THEROTICAL FRAMEWORK:
+This study is based on sleep deprivation and circadian rhythm theories, which explain how late-
+night nocturnal alertness affects students’ cognitive performance, learning efficiency, and health. According to these theories, staying awake at night disrupts the body’s natural sleep-wake cycle,
+leading to reduced concentration, weak memory, and poor academic performance. Continuous
+
+sleep disturbance also impacts physical health and increases stress, anxiety, and mental fatigue
+among students. HYPOTHESES:
+H0 (Null Hypothesis):
+Late-night nocturnal alertness has no significant effect on students’ cognitive performance,
+academic learning efficiency, or health outcomes. H1 (Alternative Hypothesis):
+Late-night nocturnal alertness has a significant negative effect on students’ cognitive
+performance, academic learning efficiency, and health outcomes. TERMINOLOGY:
+ Nocturnal Alertness – Being active or awake during late-night hours
+ Cognitive Performance – Mental abilities like memory, attention, and reasoning
+ Sleep Deprivation – Lack of sufficient sleep
+ Academic Efficiency – Ability to learn and perform academically
+ Circadian Rhythm – Body’s natural sleep-wake cycle
+RECOMMENDATIONS:
+Students should adopt consistent sleep schedules by going to bed and waking up at regular times to
+maintain a healthy circadian rhythm. Reducing screen time before bedtime and avoiding stimulants
+like caffeine at night can improve sleep quality. Educational institutions should raise awareness
+about the importance of sleep through workshops and counseling sessions.
+
+[Passage 4]
+deprivation affects the brain's ability to process and retain new information. Furthermore, Hershner and Chervin (2014) emphasized that students who stay up late often struggle with time management, resulting in decreased productivity and learning outcomes. In addition to cognitive and academic effects, late-night wakefulness has serious implications for physical health. Lack of sleep is associated with weakened immune function, increased risk of
+obesity, and hormonal imbalances (Taheri et al., 2004). Students who consistently experience poor
+sleep may develop fatigue, headaches, and reduced physical energy levels, which can further
+hinder their academic performance. Mental health is another critical area affected by nocturnal alertness. Studies indicate that sleep
+deprivation is strongly linked to anxiety, depression, and mood disorders (Baglioni et al., 2016). Late-night habits, particularly excessive use of digital devices, contribute to emotional instability
+and stress among students. Lemola et al. (2015) found that screen exposure at night negatively
+impacts sleep quality and increases depressive symptoms. Moreover, the use of smartphones and social media during late hours has intensified the problem. Cain and Gradisar (2010) highlighted that electronic media use before bedtime delays sleep onset
+and reduces sleep duration. This behavior creates a cycle where students stay awake longer, leading
+to daytime sleepiness and reduced academic engagement. The concept of "nocturnal alertness" is often linked to chronotype differences, where some
+individuals are naturally inclined to stay awake at night. However, academic schedules are
+typically aligned with early morning routines, creating a mismatch that affects students’
+performance (Roenneberg et al., 2012). This misalignment can result in what is known as "social
+jetlag," negatively impacting both learning and health. Recent studies have also explored strategies to mitigate the effects of late-night wakefulness. Sleep
+hygiene practices, such as maintaining a consistent sleep schedule, reducing screen time, and
+creating a conducive sleep environment, have been shown to improve sleep quality and academic
+outcomes (Hershner, 2020). Educational interventions that raise awareness about the importance of
+sleep can help students adopt healthier habits. In conclusion, existing literature clearly demonstrates that late-night alertness has a negative
+impact on cognitive performance, learning efficiency, and health outcomes. Addressing this issue
+is essential for improving students' academic success and overall well-being. PARADIGM:
+The study follows a cause-and-effect paradigm where late-night nocturnal alertness is considered
+the independent variable, while cognitive performance, academic learning efficiency, and physical
+and mental health outcomes are dependent variables.
+
+[Passage 5]
+deprivation affects the brain's ability to process and retain new information. Furthermore, Hershner and Chervin (2014) emphasized that students who stay up late often struggle with time management, resulting in decreased productivity and learning outcomes. In addition to cognitive and academic effects, late-night wakefulness has serious implications for physical health. Lack of sleep is associated with weakened immune function, increased risk of
+obesity, and hormonal imbalances (Taheri et al., 2004). Students who consistently experience poor
+sleep may develop fatigue, headaches, and reduced physical energy levels, which can further
+hinder their academic performance. Mental health is another critical area affected by nocturnal alertness. Studies indicate that sleep
+deprivation is strongly linked to anxiety, depression, and mood disorders (Baglioni et al., 2016). Late-night habits, particularly excessive use of digital devices, contribute to emotional instability
+and stress among students. Lemola et al. (2015) found that screen exposure at night negatively
+impacts sleep quality and increases depressive symptoms. Moreover, the use of smartphones and social media during late hours has intensified the problem. Cain and Gradisar (2010) highlighted that electronic media use before bedtime delays sleep onset
+and reduces sleep duration. This behavior creates a cycle where students stay awake longer, leading
+to daytime sleepiness and reduced academic engagement. The concept of "nocturnal alertness" is often linked to chronotype differences, where some
+individuals are naturally inclined to stay awake at night. However, academic schedules are
+typically aligned with early morning routines, creating a mismatch that affects students’
+performance (Roenneberg et al., 2012). This misalignment can result in what is known as "social
+jetlag," negatively impacting both learning and health. Recent studies have also explored strategies to mitigate the effects of late-night wakefulness. Sleep
+hygiene practices, such as maintaining a consistent sleep schedule, reducing screen time, and
+creating a conducive sleep environment, have been shown to improve sleep quality and academic
+outcomes (Hershner, 2020). Educational interventions that raise awareness about the importance of
+sleep can help students adopt healthier habits. In conclusion, existing literature clearly demonstrates that late-night alertness has a negative
+impact on cognitive performance, learning efficiency, and health outcomes. Addressing this issue
+is essential for improving students' academic success and overall well-being. PARADIGM:
+The study follows a cause-and-effect paradigm where late-night nocturnal alertness is considered
+the independent variable, while cognitive performance, academic learning efficiency, and physical
+and mental health outcomes are dependent variables.
+
+Question: Tell me about this course
+```
+
+**Response:**
+```
+The uploaded materials describe a study examining the effects of late-night nocturnal alertness on students' cognitive performance, learning efficiency, and health outcomes. However, there is no mention of a specific course in the passages provided.
+```
+
+## [chat] 2026-08-19T12:33:17.528117+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a study assistant answering a student's question about their course notes. Answer ONLY using the passages below. If the passages don't contain the answer, say you don't have that information in the uploaded materials — never make things up. Keep answers concise and direct.
+
+Passages:
+[Passage 1]
+Course outline
+Linear Algebra MTS-203
+Semester:-Fall 2025
+Instrustor:-Muhammad Ashar Tafheem
+Email:- matafheem@iba.edu.pk
+Office hours:- Mon, Wed, Sat 11am-1pm (take appointment before coming)
+Office: F23, 1st floor NBP building,Main Campus IBA
+Textbook:-
+Elementary Linear Algebra 11th Edition by Anton and Rorres
+Reference:-
+- Linear algebra step by step by Kuldeep Singh (Detailed)
+- Linear algebra and its applications by Gilbert Strang(Classic)
+- Linear algebra for Economist(Aimed towards economics)
+- Linear algebra;What you need to know by Woerdeman(Concise)
+Grade Breakdown
+- Final Exams 50%
+- Mid term 20 %
+- Quizzes 20% (8 Quizzes biweekly n-2)
+- Notebook Maintenance/CP 10%
+- Assignment 10% (2 Assignment; 1 pre-midterm and 1 pre-finals)
+Grading outline
+The grading scheme is relative but the passing marks will not drop below 50 percent. Rules
+- IBA policies apply and even the instructor is bound by these policies. - There are a total of 28 sessions in this semester. - Assignments are to be submitted on time. No reason for non-submission or late
+submission will be accepted including LMS not working. - Assignments are to be submitted on LMS. The assignments should be handwritten and
+legible. - Attendance is mandatory and NOT up to the instructor. - Maximum number of absences is 4 as per IBA rules and policies. - Your valid queries can be emailed to the instructor if they are extremely important. Otherwise, the student should ask the instructor in person. - Pestering the instructor or the TA especially, for marks, exam pattern,course reduction ,
+is strictly not allowed. It could be penalized under academic misconduct. - Please be respectful and professional in your emails and in class. Course objective
+- TO understand basic concepts of Linear algebra e.g. system of linear equations. - TO be acquainted with methods of solutions of these linear systems. - TO appreciate how linear algebra crops up in real-world problems from diverse fields,
+especially economics. - TO acquire an appreciation for the thought process required in mathematics and
+hopefully, using that analytic mindset elsewhere. Course description
+This is a standard course of linear algebra aimed towards economics students. The students
+are expected to know college algebra and topics from Calculus. These topics will be ASSUMED
+and not explained in the class.
+
+[Passage 2]
+the thought process required in mathematics and hopefully, using that analytic mindset elsewhere. Course description This is a standard course of linear algebra aimed towards economics students. The students are expected to know college algebra and topics from Calculus. These topics will be ASSUMED and not explained in the class. Outline
+Week Topics Reference
+1 Introduction to Linear Algebra 1.1,1.2
+and Gaussian Elimination
+2 Matrices operations 1.3,1.4,1.5
+3 More on matrices 1.6,1.7,1.8
+4 Leontief Input-Output Models 1.10,2.1,2.2,2.3
+and determinants
+5 General vector spaces 4.1,4.2,4.3,4.4,4.5
+6 Fundamental spaces 4.6,4.7,4.8
+7 Geometry and properties of 4.8,4.9,4.10
+Matrices
+8 Eigenvalues and 5.1,5.2,5.3,5.5
+Eigenvectors
+9 Euclidean vector spaces 3.1,3.2,3.3,3.4
+10 Inner product 6.1,6.2,6.3,6.4,6.5
+
+11 Diagonalizations 7.1,7.2,7.3
+12 Some types of matrices and 7.4,7.5,9.4
+applications,SVD
+13 General Linear 8.1,8.2,8.3
+transformations
+14 Similarity 8.4,8.5
+Whatsapp Group:-
+https://chat.whatsapp.com/EzvePeIQQ35GxtdeAhjxUD?mode=ems_wa_c
+
+Question: Tell me about this course
+```
+
+**Response:**
+```
+This is a Linear Algebra course (MTS-203) for economics students in Fall 2025, taught by Muhammad Ashar Tafheem. Prerequisites: college algebra and calculus (assumed knowledge). It covers topics like systems of equations, matrices, vector spaces, eigenvalues, and real-world applications (especially economics). The course emphasizes developing an analytic mindset. Grading includes exams (50%), midterm (20%), quizzes (20%), assignments (10%), and notebooks (10%). Key rules: strict attendance (max 4 absences), assignments via LMS, no late submissions. Textbooks include Anton/Rorres, Kuldeep Singh, and others focused on economics applications.
+```
+
+## [chat] 2026-08-19T12:51:19.121094+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are the study assistant for a specific course inside a course-prep app. The student is chatting with you from that course's own page, and the passages below are excerpts pulled from the materials they uploaded for THIS course (notes, slides, readings) — those passages ARE the course, not some unrelated document. Never respond that no course was mentioned or that you can't tell what course this is; the course is whichever one the student is chatting from, and its content is exactly what's in the passages.
+
+If the student asks something broad like 'what is this course about' or 'tell me about this course', summarize and describe what the material actually covers, in plain study-guide style — don't search the text for the literal word 'course'.
+
+Answer using ONLY the passages below; don't introduce outside facts. If the passages genuinely don't cover what was asked, say so plainly rather than guessing.
+
+FORMATTING — the client renders your reply as Markdown, so use it deliberately, not decoratively:
+- Use `##`/`###` headings to break up multi-part answers; skip them for a quick one-liner.
+- Use bullet or numbered lists for enumerable things (steps, features, causes, examples).
+- Bold the key terms and definitions a student would need to recall.
+- Use a short fenced code block only for actual code, formulas, or syntax — never for prose.
+- Use a table when comparing two or more things side by side.
+- Never pad with filler like 'Great question!' or restate the question before answering.
+
+DEPTH — match the answer to the question, but default to teaching, not summarizing:
+- Explain the 'why' and 'how', not just the 'what': give the underlying reasoning, walk through an example from the passages, or contrast it with a related concept the student might confuse it with.
+- For definitions, follow with a concrete example or an application drawn from the passages.
+- For a factual one-liner (a date, a term, a single number), stay short — don't manufacture extra sections just to look thorough.
+- Vary your structure between turns; don't force every answer into the same template.
+
+Your job is to help the student prepare: where useful, ask what they're studying for (an upcoming quiz, exam, or a specific topic) and close with a brief note on what's worth reviewing or likely to be tested, grounded in the passages.
+
+Course: Linear Algebra
+
+Passages:
+[Passage 1]
+Course outline
+Linear Algebra MTS-203
+Semester:-Fall 2025
+Instrustor:-Muhammad Ashar Tafheem
+Email:- matafheem@iba.edu.pk
+Office hours:- Mon, Wed, Sat 11am-1pm (take appointment before coming)
+Office: F23, 1st floor NBP building,Main Campus IBA
+Textbook:-
+Elementary Linear Algebra 11th Edition by Anton and Rorres
+Reference:-
+- Linear algebra step by step by Kuldeep Singh (Detailed)
+- Linear algebra and its applications by Gilbert Strang(Classic)
+- Linear algebra for Economist(Aimed towards economics)
+- Linear algebra;What you need to know by Woerdeman(Concise)
+Grade Breakdown
+- Final Exams 50%
+- Mid term 20 %
+- Quizzes 20% (8 Quizzes biweekly n-2)
+- Notebook Maintenance/CP 10%
+- Assignment 10% (2 Assignment; 1 pre-midterm and 1 pre-finals)
+Grading outline
+The grading scheme is relative but the passing marks will not drop below 50 percent. Rules
+- IBA policies apply and even the instructor is bound by these policies. - There are a total of 28 sessions in this semester. - Assignments are to be submitted on time. No reason for non-submission or late
+submission will be accepted including LMS not working. - Assignments are to be submitted on LMS. The assignments should be handwritten and
+legible. - Attendance is mandatory and NOT up to the instructor. - Maximum number of absences is 4 as per IBA rules and policies. - Your valid queries can be emailed to the instructor if they are extremely important. Otherwise, the student should ask the instructor in person. - Pestering the instructor or the TA especially, for marks, exam pattern,course reduction ,
+is strictly not allowed. It could be penalized under academic misconduct. - Please be respectful and professional in your emails and in class. Course objective
+- TO understand basic concepts of Linear algebra e.g. system of linear equations. - TO be acquainted with methods of solutions of these linear systems. - TO appreciate how linear algebra crops up in real-world problems from diverse fields,
+especially economics. - TO acquire an appreciation for the thought process required in mathematics and
+hopefully, using that analytic mindset elsewhere. Course description
+This is a standard course of linear algebra aimed towards economics students. The students
+are expected to know college algebra and topics from Calculus. These topics will be ASSUMED
+and not explained in the class.
+
+[Passage 2]
+the thought process required in mathematics and hopefully, using that analytic mindset elsewhere. Course description This is a standard course of linear algebra aimed towards economics students. The students are expected to know college algebra and topics from Calculus. These topics will be ASSUMED and not explained in the class. Outline
+Week Topics Reference
+1 Introduction to Linear Algebra 1.1,1.2
+and Gaussian Elimination
+2 Matrices operations 1.3,1.4,1.5
+3 More on matrices 1.6,1.7,1.8
+4 Leontief Input-Output Models 1.10,2.1,2.2,2.3
+and determinants
+5 General vector spaces 4.1,4.2,4.3,4.4,4.5
+6 Fundamental spaces 4.6,4.7,4.8
+7 Geometry and properties of 4.8,4.9,4.10
+Matrices
+8 Eigenvalues and 5.1,5.2,5.3,5.5
+Eigenvectors
+9 Euclidean vector spaces 3.1,3.2,3.3,3.4
+10 Inner product 6.1,6.2,6.3,6.4,6.5
+
+11 Diagonalizations 7.1,7.2,7.3
+12 Some types of matrices and 7.4,7.5,9.4
+applications,SVD
+13 General Linear 8.1,8.2,8.3
+transformations
+14 Similarity 8.4,8.5
+Whatsapp Group:-
+https://chat.whatsapp.com/EzvePeIQQ35GxtdeAhjxUD?mode=ems_wa_c
+
+Question: Summarize the key concepts I should know
+```
+
+**Response:**
+```
+## Key Concepts to Know  
+This course emphasizes foundational linear algebra principles, primarily with applications to economics. Focus on these areas:  
+
+### 1. **Linear Systems and Gaussian Elimination**  
+- **Gaussian Elimination**: A systematic method for solving systems of linear equations.  
+  - Use partial/full pivoting to avoid computational errors.  
+  - Relate to inconsistent systems or free variables (parametric solutions).  
+
+### 2. **Matrix Operations**  
+- **Addition/Subtraction**: Defined for matrices of the same dimensions.  
+- **Scalar Multiplication**: Scale each element by a scalar.  
+- **Matrix Multiplication**: Rows of first matrix × columns of second.  
+  - Not commutative ($AB \neq BA$ in general).  
+
+### 3. **Determinants**  
+- Scalar value computed from a square…
+```
+
+## [generation] 2026-08-19T12:52:41.058620+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=0542ea8d-4dc2-4ef8-bc4d-418b82c875e0):
+the thought process required in mathematics and hopefully, using that analytic mindset elsewhere. Course description This is a standard course of linear algebra aimed towards economics students. The students are expected to know college algebra and topics from Calculus. These topics will be ASSUMED and not explained in the class. Outline
+Week Topics Reference
+1 Introduction to Linear Algebra 1.1,1.2
+and Gaussian Elimination
+2 Matrices operations 1.3,1.4,1.5
+3 More on matrices 1.6,1.7,1.8
+4 Leontief Input-Output Models 1.10,2.1,2.2,2.3
+and determinants
+5 General vector spaces 4.1,4.2,4.3,4.4,4.5
+6 Fundamental spaces 4.6,4.7,4.8
+7 Geometry and properties of 4.8,4.9,4.10
+Matrices
+8 Eigenvalues and 5.1,5.2,5.3,5.5
+Eigenvectors
+9 Euclidean vector spaces 3.1,3.2,3.3,3.4
+10 Inner product 6.1,6.2,6.3,6.4,6.5
+
+11 Diagonalizations 7.1,7.2,7.3
+12 Some types of matrices and 7.4,7.5,9.4
+applications,SVD
+13 General Linear 8.1,8.2,8.3
+transformations
+14 Similarity 8.4,8.5
+Whatsapp Group:-
+https://chat.whatsapp.com/EzvePeIQQ35GxtdeAhjxUD?mode=ems_wa_c
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "What prior knowledge is assumed for this linear algebra course?", "choices": ["College Algebra and Calculus topics", "Advanced Calculus", "High school algebra", "None of the above"], "answer_key": "College Algebra and Calculus topics", "concept_tag": "Prerequisites"}
+```
+
+## [generation] 2026-08-19T12:52:55.222020+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=610cc456-325e-41ef-be90-0d78664f394e):
+Course outline
+Linear Algebra MTS-203
+Semester:-Fall 2025
+Instrustor:-Muhammad Ashar Tafheem
+Email:- matafheem@iba.edu.pk
+Office hours:- Mon, Wed, Sat 11am-1pm (take appointment before coming)
+Office: F23, 1st floor NBP building,Main Campus IBA
+Textbook:-
+Elementary Linear Algebra 11th Edition by Anton and Rorres
+Reference:-
+- Linear algebra step by step by Kuldeep Singh (Detailed)
+- Linear algebra and its applications by Gilbert Strang(Classic)
+- Linear algebra for Economist(Aimed towards economics)
+- Linear algebra;What you need to know by Woerdeman(Concise)
+Grade Breakdown
+- Final Exams 50%
+- Mid term 20 %
+- Quizzes 20% (8 Quizzes biweekly n-2)
+- Notebook Maintenance/CP 10%
+- Assignment 10% (2 Assignment; 1 pre-midterm and 1 pre-finals)
+Grading outline
+The grading scheme is relative but the passing marks will not drop below 50 percent. Rules
+- IBA policies apply and even the instructor is bound by these policies. - There are a total of 28 sessions in this semester. - Assignments are to be submitted on time. No reason for non-submission or late
+submission will be accepted including LMS not working. - Assignments are to be submitted on LMS. The assignments should be handwritten and
+legible. - Attendance is mandatory and NOT up to the instructor. - Maximum number of absences is 4 as per IBA rules and policies. - Your valid queries can be emailed to the instructor if they are extremely important. Otherwise, the student should ask the instructor in person. - Pestering the instructor or the TA especially, for marks, exam pattern,course reduction ,
+is strictly not allowed. It could be penalized under academic misconduct. - Please be respectful and professional in your emails and in class. Course objective
+- TO understand basic concepts of Linear algebra e.g. system of linear equations. - TO be acquainted with methods of solutions of these linear systems. - TO appreciate how linear algebra crops up in real-world problems from diverse fields,
+especially economics. - TO acquire an appreciation for the thought process required in mathematics and
+hopefully, using that analytic mindset elsewhere. Course description
+This is a standard course of linear algebra aimed towards economics students. The students
+are expected to know college algebra and topics from Calculus. These topics will be ASSUMED
+and not explained in the class.
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "What is the total percentage allocated to Quizzes and Assignments in the course grading?", "choices": ["20%", "30%", "40%", "50%"], "answer_key": "30%", "concept_tag": "Grading Structure"  	
+}
+```
+
+## [generation] 2026-08-19T13:36:10.968929+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=0542ea8d-4dc2-4ef8-bc4d-418b82c875e0):
+the thought process required in mathematics and hopefully, using that analytic mindset elsewhere. Course description This is a standard course of linear algebra aimed towards economics students. The students are expected to know college algebra and topics from Calculus. These topics will be ASSUMED and not explained in the class. Outline
+Week Topics Reference
+1 Introduction to Linear Algebra 1.1,1.2
+and Gaussian Elimination
+2 Matrices operations 1.3,1.4,1.5
+3 More on matrices 1.6,1.7,1.8
+4 Leontief Input-Output Models 1.10,2.1,2.2,2.3
+and determinants
+5 General vector spaces 4.1,4.2,4.3,4.4,4.5
+6 Fundamental spaces 4.6,4.7,4.8
+7 Geometry and properties of 4.8,4.9,4.10
+Matrices
+8 Eigenvalues and 5.1,5.2,5.3,5.5
+Eigenvectors
+9 Euclidean vector spaces 3.1,3.2,3.3,3.4
+10 Inner product 6.1,6.2,6.3,6.4,6.5
+
+11 Diagonalizations 7.1,7.2,7.3
+12 Some types of matrices and 7.4,7.5,9.4
+applications,SVD
+13 General Linear 8.1,8.2,8.3
+transformations
+14 Similarity 8.4,8.5
+Whatsapp Group:-
+https://chat.whatsapp.com/EzvePeIQQ35GxtdeAhjxUD?mode=ems_wa_c
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "What is Gaussian Elimination primarily used for in the context of linear algebra?", "choices": ["Solving systems of linear equations", "Calculating eigenvalues", "Finding matrix inverses", "Determining matrix rank"], "answer_key": "Solving systems of linear equations", "concept_tag": "Linear Algebra"
+}
+```
+
+## [generation] 2026-08-19T13:36:38.011090+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=610cc456-325e-41ef-be90-0d78664f394e):
+Course outline
+Linear Algebra MTS-203
+Semester:-Fall 2025
+Instrustor:-Muhammad Ashar Tafheem
+Email:- matafheem@iba.edu.pk
+Office hours:- Mon, Wed, Sat 11am-1pm (take appointment before coming)
+Office: F23, 1st floor NBP building,Main Campus IBA
+Textbook:-
+Elementary Linear Algebra 11th Edition by Anton and Rorres
+Reference:-
+- Linear algebra step by step by Kuldeep Singh (Detailed)
+- Linear algebra and its applications by Gilbert Strang(Classic)
+- Linear algebra for Economist(Aimed towards economics)
+- Linear algebra;What you need to know by Woerdeman(Concise)
+Grade Breakdown
+- Final Exams 50%
+- Mid term 20 %
+- Quizzes 20% (8 Quizzes biweekly n-2)
+- Notebook Maintenance/CP 10%
+- Assignment 10% (2 Assignment; 1 pre-midterm and 1 pre-finals)
+Grading outline
+The grading scheme is relative but the passing marks will not drop below 50 percent. Rules
+- IBA policies apply and even the instructor is bound by these policies. - There are a total of 28 sessions in this semester. - Assignments are to be submitted on time. No reason for non-submission or late
+submission will be accepted including LMS not working. - Assignments are to be submitted on LMS. The assignments should be handwritten and
+legible. - Attendance is mandatory and NOT up to the instructor. - Maximum number of absences is 4 as per IBA rules and policies. - Your valid queries can be emailed to the instructor if they are extremely important. Otherwise, the student should ask the instructor in person. - Pestering the instructor or the TA especially, for marks, exam pattern,course reduction ,
+is strictly not allowed. It could be penalized under academic misconduct. - Please be respectful and professional in your emails and in class. Course objective
+- TO understand basic concepts of Linear algebra e.g. system of linear equations. - TO be acquainted with methods of solutions of these linear systems. - TO appreciate how linear algebra crops up in real-world problems from diverse fields,
+especially economics. - TO acquire an appreciation for the thought process required in mathematics and
+hopefully, using that analytic mindset elsewhere. Course description
+This is a standard course of linear algebra aimed towards economics students. The students
+are expected to know college algebra and topics from Calculus. These topics will be ASSUMED
+and not explained in the class.
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "What percentage of the final grade is allocated to Final Exams in this course?", "choices": ["50%", "20%", "10%", "30%"], "answer_key": "50%", "concept_tag": "Grade Breakdown"}
+```
+
+## [topics] 2026-08-21T12:20:34.470989+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a curriculum analyst. Given excerpts from a student's course materials, extract the distinct topics they cover, ordered roughly as they appear in the material. Respond with ONLY a JSON object of the form {"topics": ["Topic name", ...]} — between 4 and 12 concise topic names (2-5 words each), with no duplicates or near-duplicates and no numbering. No explanation, no markdown fences — your entire response must start with { and end with }.
+
+Course outline
+Linear Algebra MTS-203
+Semester:-Fall 2025
+Instrustor:-Muhammad Ashar Tafheem
+Email:- matafheem@iba.edu.pk
+Office hours:- Mon, Wed, Sat 11am-1pm (take appointment before coming)
+Office: F23, 1st floor NBP building,Main Campus IBA
+Textbook:-
+Elementary Linear Algebra 11th Edition by Anton and Rorres
+Reference:-
+- Linear algebra step by step by Kuldeep Singh (Detailed)
+- Linear algebra and its applications by Gilbert Strang(Classic)
+- Linear algebra for Economist(Aimed towards economics)
+- Linear algebra;What you need to know by Woerdeman(Concise)
+Grade Breakdown
+- Final Exams 50%
+- Mid term 20 %
+- Quizzes 20% (8 Quizzes biweekly n-2)
+- Notebook Maintenance/CP 10%
+- Assignment 10% (2 Assignment; 1 pre-midterm and 1 pre-finals)
+Grading outline
+The grading scheme is relative but the passing marks will not drop below 50 percent. Rules
+- IBA policies apply and even the instructor is bound by these policies. - There are a total of 28 sessions in this semester. - Assignments are to be submitted on time. No reason for non-submission or late
+submission will be accepted including LMS not working. - Assignments are to be submitted on LMS. The assignments should be handwritten and
+legible. - Attendance is mandatory and NOT up to the instructor. - Maximum number of absences is 4 as per IBA rules and policies. - Your valid queries can be emailed to the instructor if they are extremely important. Otherwise, the student should ask the instructor in person. - Pestering the instructor or the TA especially, for marks, exam pattern,course reduction ,
+is strictly not allowed. It could be penalized under academic misconduct. - Please be respectful and professional in your emails and in class. Course objective
+- TO understand basic concepts of Linear algebra e.g. system of linear equations. - TO be acquainted with methods of solutions of these linear systems. - TO appreciate how linear algebra crops up in real-world problems from diverse fields,
+especially economics. - TO acquire an appreciation for the thought process required in mathematics and
+hopefully, using that analytic mindset elsewhere. Course description
+This is a standard course of linear algebra aimed towards economics students. The students
+are expected to know college algebra and topics from Calculus. These topics will be ASSUMED
+and not explained in the class.
+
+the thought process required in mathematics and hopefully, using that analytic mindset elsewhere. Course description This is a standard course of linear algebra aimed towards economics students. The students are expected to know college algebra and topics from Calculus. These topics will be ASSUMED and not explained in the class. Outline
+Week Topics Reference
+1 Introduction to Linear Algebra 1.1,1.2
+and Gaussian Elimination
+2 Matrices operations 1.3,1.4,1.5
+3 More on matrices 1.6,1.7,1.8
+4 Leontief Input-Output Models 1.10,2.1,2.2,2.3
+and determinants
+5 General vector spaces 4.1,4.2,4.3,4.4,4.5
+6 Fundamental spaces 4.6,4.7,4.8
+7 Geometry and properties of 4.8,4.9,4.10
+Matrices
+8 Eigenvalues and 5.1,5.2,5.3,5.5
+Eigenvectors
+9 Euclidean vector spaces 3.1,3.2,3.3,3.4
+10 Inner product 6.1,6.2,6.3,6.4,6.5
+
+11 Diagonalizations 7.1,7.2,7.3
+12 Some types of matrices and 7.4,7.5,9.4
+applications,SVD
+13 General Linear 8.1,8.2,8.3
+transformations
+14 Similarity 8.4,8.5
+Whatsapp Group:-
+https://chat.whatsapp.com/EzvePeIQQ35GxtdeAhjxUD?mode=ems_wa_c
+```
+
+**Response:**
+```
+{"topics": ["Introduction to Linear Algebra and Gaussian Elimination", "Matrix Operations", "Advanced Matrix Concepts", "Leontief Input-Output Models and Determinants", "Vector Spaces", "Fundamental Subspaces", "Matrix Geometry and Properties", "Eigenvalues and Eigenvectors", "Euclidean Spaces", "Inner Product Spaces", "Diagonalization", "Matrix Types and SVD"]}
+```
+
+## [generation] 2026-08-21T12:21:02.939530+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=ad1d02de-8b73-497e-aada-b049238ce02a):
+the thought process required in mathematics and hopefully, using that analytic mindset elsewhere. Course description This is a standard course of linear algebra aimed towards economics students. The students are expected to know college algebra and topics from Calculus. These topics will be ASSUMED and not explained in the class. Outline
+Week Topics Reference
+1 Introduction to Linear Algebra 1.1,1.2
+and Gaussian Elimination
+2 Matrices operations 1.3,1.4,1.5
+3 More on matrices 1.6,1.7,1.8
+4 Leontief Input-Output Models 1.10,2.1,2.2,2.3
+and determinants
+5 General vector spaces 4.1,4.2,4.3,4.4,4.5
+6 Fundamental spaces 4.6,4.7,4.8
+7 Geometry and properties of 4.8,4.9,4.10
+Matrices
+8 Eigenvalues and 5.1,5.2,5.3,5.5
+Eigenvectors
+9 Euclidean vector spaces 3.1,3.2,3.3,3.4
+10 Inner product 6.1,6.2,6.3,6.4,6.5
+
+11 Diagonalizations 7.1,7.2,7.3
+12 Some types of matrices and 7.4,7.5,9.4
+applications,SVD
+13 General Linear 8.1,8.2,8.3
+transformations
+14 Similarity 8.4,8.5
+Whatsapp Group:-
+https://chat.whatsapp.com/EzvePeIQQ35GxtdeAhjxUD?mode=ems_wa_c
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "Which week in the course covers Leontief Input-Output Models and determinants?", "choices": ["Week 1", "Week 2", "Week 4", "Week 5"], "answer_key": "Week 4", "concept_tag": "Course Outline Week 4 Topics"}
+```
+
+## [generation] 2026-08-21T12:21:16.946933+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=7e27d7b7-9615-47a2-a53f-0a11243ee888):
+Course outline
+Linear Algebra MTS-203
+Semester:-Fall 2025
+Instrustor:-Muhammad Ashar Tafheem
+Email:- matafheem@iba.edu.pk
+Office hours:- Mon, Wed, Sat 11am-1pm (take appointment before coming)
+Office: F23, 1st floor NBP building,Main Campus IBA
+Textbook:-
+Elementary Linear Algebra 11th Edition by Anton and Rorres
+Reference:-
+- Linear algebra step by step by Kuldeep Singh (Detailed)
+- Linear algebra and its applications by Gilbert Strang(Classic)
+- Linear algebra for Economist(Aimed towards economics)
+- Linear algebra;What you need to know by Woerdeman(Concise)
+Grade Breakdown
+- Final Exams 50%
+- Mid term 20 %
+- Quizzes 20% (8 Quizzes biweekly n-2)
+- Notebook Maintenance/CP 10%
+- Assignment 10% (2 Assignment; 1 pre-midterm and 1 pre-finals)
+Grading outline
+The grading scheme is relative but the passing marks will not drop below 50 percent. Rules
+- IBA policies apply and even the instructor is bound by these policies. - There are a total of 28 sessions in this semester. - Assignments are to be submitted on time. No reason for non-submission or late
+submission will be accepted including LMS not working. - Assignments are to be submitted on LMS. The assignments should be handwritten and
+legible. - Attendance is mandatory and NOT up to the instructor. - Maximum number of absences is 4 as per IBA rules and policies. - Your valid queries can be emailed to the instructor if they are extremely important. Otherwise, the student should ask the instructor in person. - Pestering the instructor or the TA especially, for marks, exam pattern,course reduction ,
+is strictly not allowed. It could be penalized under academic misconduct. - Please be respectful and professional in your emails and in class. Course objective
+- TO understand basic concepts of Linear algebra e.g. system of linear equations. - TO be acquainted with methods of solutions of these linear systems. - TO appreciate how linear algebra crops up in real-world problems from diverse fields,
+especially economics. - TO acquire an appreciation for the thought process required in mathematics and
+hopefully, using that analytic mindset elsewhere. Course description
+This is a standard course of linear algebra aimed towards economics students. The students
+are expected to know college algebra and topics from Calculus. These topics will be ASSUMED
+and not explained in the class.
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "What percentage of the grade is allocated to final exams in Linear Algebra MTS-203?", "choices": ["50%", "20%", "30%", "40%"], "answer_key": "50%", "concept_tag": "Grade Breakdown"}
+```
+
+## [generation] 2026-08-22T10:48:22.705200+00:00
+
+**Prompt:**
+```
+[liquid/lfm-2.5-2.6b:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=ad1d02de-8b73-497e-aada-b049238ce02a):
+the thought process required in mathematics and hopefully, using that analytic mindset elsewhere. Course description This is a standard course of linear algebra aimed towards economics students. The students are expected to know college algebra and topics from Calculus. These topics will be ASSUMED and not explained in the class. Outline
+Week Topics Reference
+1 Introduction to Linear Algebra 1.1,1.2
+and Gaussian Elimination
+2 Matrices operations 1.3,1.4,1.5
+3 More on matrices 1.6,1.7,1.8
+4 Leontief Input-Output Models 1.10,2.1,2.2,2.3
+and determinants
+5 General vector spaces 4.1,4.2,4.3,4.4,4.5
+6 Fundamental spaces 4.6,4.7,4.8
+7 Geometry and properties of 4.8,4.9,4.10
+Matrices
+8 Eigenvalues and 5.1,5.2,5.3,5.5
+Eigenvectors
+9 Euclidean vector spaces 3.1,3.2,3.3,3.4
+10 Inner product 6.1,6.2,6.3,6.4,6.5
+
+11 Diagonalizations 7.1,7.2,7.3
+12 Some types of matrices and 7.4,7.5,9.4
+applications,SVD
+13 General Linear 8.1,8.2,8.3
+transformations
+14 Similarity 8.4,8.5
+Whatsapp Group:-
+https://chat.whatsapp.com/EzvePeIQQ35GxtdeAhjxUD?mode=ems_wa_c
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "In which week of the course is Leontief Input-Output Models covered?", "choices": ["Week 1", "Week 4", "Week 7", "Week 10"], "answer_key": "Week 4", "concept_tag": "Linear Algebra Course Outline"}
+```
+
+## [generation] 2026-08-22T10:48:35.424795+00:00
+
+**Prompt:**
+```
+[nvidia/nemotron-nano-9b-v2:free] You are a question-generation engine for a study app. Generate a question ONLY from the passage below. Do not introduce facts not present in the passage. Respond with ONLY a single JSON object and nothing else — no explanation, no markdown code fences, no text before or after the JSON. Your entire response must start with { and end with }.
+
+Return strict JSON of the form: {"type": "mcq|cloze|short_answer", "prompt": "...", "choices": ["..."] | null, "answer_key": "...", "concept_tag": "short concept name"}. For mcq, choices must contain 4 options and answer_key must be the exact correct choice text. For cloze, prompt must contain a blank marked with ____ and answer_key is the missing text. For short_answer, choices must be null and answer_key is the ideal answer.
+
+Example valid response: {"type": "mcq", "prompt": "What gas do plants release during photosynthesis?", "choices": ["Oxygen", "Nitrogen", "Hydrogen", "Helium"], "answer_key": "Oxygen", "concept_tag": "Photosynthesis"}
+
+Passage (chunk_id=7e27d7b7-9615-47a2-a53f-0a11243ee888):
+Course outline
+Linear Algebra MTS-203
+Semester:-Fall 2025
+Instrustor:-Muhammad Ashar Tafheem
+Email:- matafheem@iba.edu.pk
+Office hours:- Mon, Wed, Sat 11am-1pm (take appointment before coming)
+Office: F23, 1st floor NBP building,Main Campus IBA
+Textbook:-
+Elementary Linear Algebra 11th Edition by Anton and Rorres
+Reference:-
+- Linear algebra step by step by Kuldeep Singh (Detailed)
+- Linear algebra and its applications by Gilbert Strang(Classic)
+- Linear algebra for Economist(Aimed towards economics)
+- Linear algebra;What you need to know by Woerdeman(Concise)
+Grade Breakdown
+- Final Exams 50%
+- Mid term 20 %
+- Quizzes 20% (8 Quizzes biweekly n-2)
+- Notebook Maintenance/CP 10%
+- Assignment 10% (2 Assignment; 1 pre-midterm and 1 pre-finals)
+Grading outline
+The grading scheme is relative but the passing marks will not drop below 50 percent. Rules
+- IBA policies apply and even the instructor is bound by these policies. - There are a total of 28 sessions in this semester. - Assignments are to be submitted on time. No reason for non-submission or late
+submission will be accepted including LMS not working. - Assignments are to be submitted on LMS. The assignments should be handwritten and
+legible. - Attendance is mandatory and NOT up to the instructor. - Maximum number of absences is 4 as per IBA rules and policies. - Your valid queries can be emailed to the instructor if they are extremely important. Otherwise, the student should ask the instructor in person. - Pestering the instructor or the TA especially, for marks, exam pattern,course reduction ,
+is strictly not allowed. It could be penalized under academic misconduct. - Please be respectful and professional in your emails and in class. Course objective
+- TO understand basic concepts of Linear algebra e.g. system of linear equations. - TO be acquainted with methods of solutions of these linear systems. - TO appreciate how linear algebra crops up in real-world problems from diverse fields,
+especially economics. - TO acquire an appreciation for the thought process required in mathematics and
+hopefully, using that analytic mindset elsewhere. Course description
+This is a standard course of linear algebra aimed towards economics students. The students
+are expected to know college algebra and topics from Calculus. These topics will be ASSUMED
+and not explained in the class.
+
+Generate one question from this passage.
+```
+
+**Response:**
+```
+{"type": "mcq", "prompt": "To which academic field is the Linear Algebra MTS-203 course primarily designed?", "choices": ["Economics", "Engineering", "Computer Science", "Biology"], "answer_key": "Economics", "concept_tag": "Course Objective - Economics Application"}
+```

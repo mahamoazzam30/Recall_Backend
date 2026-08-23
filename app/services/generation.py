@@ -49,11 +49,11 @@ def _validate_payload(payload: dict) -> None:
             raise GenerationError("mcq requires 4 choices including the answer_key")
 
 
-def _get_or_create_concept(db: Session, subject_id: uuid.UUID, concept_tag: str) -> Concept:
-    stmt = select(Concept).where(Concept.subject_id == subject_id, Concept.name == concept_tag)
+def _get_or_create_concept(db: Session, course_id: uuid.UUID, concept_tag: str) -> Concept:
+    stmt = select(Concept).where(Concept.course_id == course_id, Concept.name == concept_tag)
     concept = db.execute(stmt).scalar_one_or_none()
     if concept is None:
-        concept = Concept(subject_id=subject_id, name=concept_tag)
+        concept = Concept(course_id=course_id, name=concept_tag)
         db.add(concept)
         db.flush()
     return concept
@@ -62,11 +62,17 @@ def _get_or_create_concept(db: Session, subject_id: uuid.UUID, concept_tag: str)
 async def generate_question(
     db: Session,
     chunk: Chunk,
-    subject_id: uuid.UUID,
+    course_id: uuid.UUID,
     desired_type: QuestionType | None = None,
+    concept_override: str | None = None,
     client: OpenRouterClient | None = None,
 ) -> Question:
-    """Generate a question from `chunk`, retrying once on a bad/untraceable response."""
+    """Generate a question from `chunk`, retrying once on a bad/untraceable response.
+
+    If `concept_override` is set, the question is tagged into that concept
+    directly instead of whatever concept name the model guesses — used when
+    the student has already picked a specific topic to be quizzed on.
+    """
     client = client or OpenRouterClient()
 
     type_hint = f" The question type must be '{desired_type.value}'." if desired_type else ""
@@ -84,7 +90,7 @@ async def generate_question(
     else:
         raise GenerationError(f"generation failed after retry: {last_error}")
 
-    concept = _get_or_create_concept(db, subject_id, payload["concept_tag"])
+    concept = _get_or_create_concept(db, course_id, concept_override or payload["concept_tag"])
 
     question = Question(
         chunk_id=chunk.id,

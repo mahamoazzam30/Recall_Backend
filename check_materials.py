@@ -13,3 +13,4 @@ try:
             print(f"  - {m.filename} | status={m.status} | chunks={chunk_count}")
 finally:
     db.close()
+

@@ -1,4 +1,4 @@
-﻿import enum
+import enum
 import uuid
 
 from sqlalchemy import Enum, ForeignKey, String
@@ -25,12 +25,16 @@ class MaterialStatus(str, enum.Enum):
 class Material(UUIDPKMixin, TimestampMixin, Base):
     __tablename__ = "materials"
 
-    subject_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("subjects.id"), nullable=False)
+    course_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("courses.id"), nullable=False)
+    module_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("modules.id"), nullable=True
+    )
     filename: Mapped[str] = mapped_column(String(255), nullable=False)
     source_type: Mapped[SourceType] = mapped_column(Enum(SourceType, name="source_type"), nullable=False)
     status: Mapped[MaterialStatus] = mapped_column(
         Enum(MaterialStatus, name="material_status"), default=MaterialStatus.processing, nullable=False
     )
 
-    subject: Mapped["Subject"] = relationship(back_populates="materials")
+    course: Mapped["Course"] = relationship(back_populates="materials")
+    module: Mapped["Module | None"] = relationship(back_populates="materials")
     chunks: Mapped[list["Chunk"]] = relationship(back_populates="material", cascade="all, delete-orphan")

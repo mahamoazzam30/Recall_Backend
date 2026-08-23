@@ -60,6 +60,7 @@ async def submit_attempt(
     mastery = memory.record_attempt_result(db, current_user.id, question.concept_id, attempt.score or 0.0)
     due_at = (mastery.last_reviewed_at or datetime.now(timezone.utc)) + timedelta(days=max(mastery.interval_days, 1))
     hooks.upsert_schedule_item(db, current_user.id, question.concept_id, due_at)
+    memory.maybe_update_error_note(db, current_user.id, question.concept_id)
 
     return _to_response(attempt, question)
 
